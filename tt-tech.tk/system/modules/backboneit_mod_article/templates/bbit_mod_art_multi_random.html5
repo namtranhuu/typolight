@@ -1,0 +1,19 @@
+<?php
+foreach($this->articles as $arrArticle) {
+	
+	$objArticle = IncludeArticleUtils::generateArticle(
+		$arrArticle['id'],
+		$arrArticle['nosearch'],
+		$arrArticle['container'],
+		$this->column,
+		$arrArticle['cssID']
+	);
+	if(!empty($objArticle->teaser)){
+	?>
+<li class="<?php echo $objArticle->cssID[0] ?>">
+<?php echo $objArticle->teaser;?>
+    </li>
+<?php
+	}
+}
+?>
